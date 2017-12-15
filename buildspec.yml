@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 phases:
   build:
     commands:
@@ -8,3 +8,4 @@ artifacts:
     - appspec.yml
     - target/SampleMavenTomcatApp.war
     - scripts/*
+    
