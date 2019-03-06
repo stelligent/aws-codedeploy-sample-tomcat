@@ -3,6 +3,12 @@ phases:
   build:
     commands:
       - mvn package
+  post_build:  
+    commands:
+      - zip -r tomweb.zip target/SampleMavenTomcatApp.war
+      - aws s3 cp tomweb.zip s3://tomcat-app-mar-5/
 artifacts:
   files:
-    - '**/*'
+    - target/SampleMavenTomcatApp.war
+    - appspec.yml
+    - scripts/*
